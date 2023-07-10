@@ -1,0 +1,37 @@
+{%extends 'base.html'%}
+{%block title_block%}
+<title>Todo-detail</title>
+{%endblock%}
+
+{%block body_block%}
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <div class="card" style="width: 100%;">
+            <div class="card-header text-center fs-5 text-danger">
+                Task-Detail
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item fs-4">{{task.task_name}}</li>
+              <li class="list-group-item fs-4">{{task.user}}</li>
+              <li class="list-group-item fs-4">{{task.created_date}}</li>
+              <li class="list-group-item fs-4">{{task.status}}</li>
+
+              <li class="list-group-item">
+                <div class="row">
+                    <div class="col-6">
+                        <a href="{%url 'todo-remove' task.id%}" class="btn btn-warning text-white form-control">Delete</a>
+                    </div>
+                    <div class="col-6">
+                        <a href="{%url 'todo-edit' task.id%}" class="btn btn-success text-white form-control">Edit</a>
+
+                    </div>                </div>
+              </li>
+
+            </ul>
+          </div>
+    </div>
+    <div class="col-2"></div>
+</div>
+
+{%endblock%}
